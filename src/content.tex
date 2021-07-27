@@ -1,14 +1,61 @@
+\section{Basic counting techniques}
+
+{\it Addition principle}\index{Addition principle}: when there are $m$ cases such that the $i$th case has $n_{i}$ options, for $i=1,\ldots,m$, and no two of the cases have any options in common, the total number of options is $n_{1}+n_{2}+\ldots+n_{m}$
+
+{\it Multiplication principle}\index{Multiplication principle}: when a procedure can be broken down into $m$ steps, such that the are $n_{1}$ options for step 1, and such that after the completion of step $i-1$ there are $n_{i}$ options for step $i$, the number of ways of performing the procedure is $n_{1}\cdot n_{2}\cdot\ldots\cdot n_{m}$
+
 \section{Permutations}
 
-{\it Addition principle}\index{Addition principle}: if sets $A_{1}$ through $A_{n}$ are pairwise disjoint and have sizes $m_{1},\ldots,m_{n}$, then the size of $A_{1}\cup\ldots\cup A_{n}=\sum\limits_{i=1}^{n}m_{i}$
+\subsection{Ordered selection}
 
-{\it Multiplication principle}\index{Multiplication principle}: $n$ events have
-$m_{i}$ possible outcomes, for $i=1,\ldots,n$, where each $m_{i}$ is unaffected
-by the outcomes of other events, then the number of possible outcomes overall is
-$\prod\limits_{i=1}^{n}m_{i}$
+{\it Ordered selection}\index{Ordered selection} of $k$ items from a set $S$ is a nonrepeating list of $k$ items from $S$.
+
+{\it Failling power}\index{Failling power} $x^{\underline{k}}$ is the product $x(x-1)\ldots(x-k+1)$ of $k$ decreasing factors starting at the real number $x$. Mathematically model the process of selecting $k$ items from a collection of $n$ items in circumstances where the ordering of the selection matters and repetition is not allowed.
+
+{\it Permutation of a list}\index{Permutation of a list} is any rearrangement of the list.
+
+{\it Permutation of a set}\index{Permutation of a set} of $n$ items is an arrangement of those items into a list.
+
+{\it $k$-permutation of a set}\index{$k$-permutation of a set} of $n$ items is an ordered selection of $k$ items from that set.
+
+{\it Permutation coefficient $P(n,k)$}\index{Permutation coefficient $P(n,k)$} is the number of ways to choose an ordered selection of $k$items from a set of $n$ items; that is, the number of $k$-permutations.
+\begin{eqnarray*}
+    P(n,k)=n^{\underline{k}}=\frac{n!}{(n-k)!}
+\end{eqnarray*}
+
+{\it Derangement of a list}\index{Derangement of a list} is a permutation of the entries such that no entry remains in the original position.
+
+\subsection{Unordered selection}
+
+{\it Unordered selection}\index{Unordered selection} of $k$ items from a set $S$ is a subset of $k$ items from $S$.
+
+{\it $k$-combination}\index{$k$-combination} from a set $S$ is an unordered selection of $k$ items.
+
+{\it Combination coefficient $C(n,k)$}\index{Combination coefficient $C(n,k)$} - is the number of $k$-combinations of $n$ objects.
+
+{\it Binomial coefficient $\binom{n}{k}$}\index{Binomial coefficient} is the coefficient of $x^{k}y^{n-k}$ in the expansion of $(x+y)^{n}$. Binomial coefficients mathematically model the process of selectiong $k$ items from a collection of $n$ items in circumstances where the ordering of the selection does not matter, and repetitions are not allowed.
+\begin{eqnarray*}
+    C(n,k)=\frac{P(n,k)}{k!}=\frac{n^{\underline{k}}}{k!}=\frac{n!}{k!(n-k)!}=\binom{n}{k}
+\end{eqnarray*}
+
+\subsection{Selection with repetition}
+
+{\it Ordered selection with replacement}\index{Ordered selection with replacement} is an ordered selection in which each object in the selection set can be chosen arbitrarily often.
+\begin{eqnarray*}
+    P^{R}(n,k)=n^{k}
+\end{eqnarray*}
+ - {\it permutation-with-replacement coefficient $P^{R}(n,k)$}\index{permutation-with-replacement coefficient $P^{R}(n,k)$}
+
+{\it Ordered selection with specified replacement}\index{Ordered selection with specified replacement} fixes the number of time each object is to be chosen.
+
+{\it Unordered selection with replacement}\index{Unordered selection with replacement} is a selection in which each object in the selection set can be chosen arbutrarily often.
+\begin{eqnarray*}
+    C^{R}(n,k)=C(n+k-1,k)
+\end{eqnarray*}
+- {\it combination-with-replacement coefficient $C^{R}(n,k)$}\index{combination-with-replacement coefficient $C^{R}(n,k)$}
 
 \section{Additional}
 
-{\it Pigeonhole principle}\index{Pigeonhole principle}: if $n$ items are put
-into $m$ containers, with $n > m$, then at least one container must contain more
-than one item \cite{pigeonhole-principle}.
+{\it Pigeonhole principle}\index{Pigeonhole principle}: if $n$ items are put into $m$ containers, with $n > m$, then at least one container must contain more than one item \cite{pigeonhole-principle}.
+
+{\it Generalized pigeonhole principle}\index{Generalized pigeonhole principle}: if $m$ objects are placed into $k$ boxes, then some box contains at least $\ceil*{\frac{m}{k}}$ objects.

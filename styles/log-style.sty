@@ -57,12 +57,12 @@
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
 \hypersetup{    % Гиперссылки
     unicode=true,           % русские буквы в раздела PDF
-    pdftitle={database handbook},   % Заголовок
+    pdftitle={combinatorics handbook},   % Заголовок
     pdfauthor={kipparis49},      % Автор
-    pdfsubject={database},      % Тема
+    pdfsubject={combinatorics},      % Тема
     pdfcreator={kipparis49}, % Создатель
     pdfproducer={Производитель}, % Производитель
-    pdfkeywords={big data} {database} {sql}, % Ключевые слова
+    pdfkeywords={discrete math} {math} {combinatorics}, % Ключевые слова
     colorlinks=true,        % false: ссылки в рамках; true: цветные ссылки
     linkcolor=red,          % внутренние ссылки
     citecolor=green,        % на библиографию
@@ -74,12 +74,15 @@
 
 \usepackage{multicol} % Несколько колонок
 
-\usepackage[]{amsmath}  % работа с матешой
+%%% матеша
+\usepackage[]{amsmath}   % доп символы
+\usepackage[]{mathtools} % делаем шорткаты в матешу
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}   % округление вверх
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}% округление вниз
 
 \usepackage{makeidx} \makeindex % индекс 
 
 %%% библиография
-    % backend=bibtex
 \usepackage[
     backend=biber
 ]{biblatex}
